@@ -12,7 +12,7 @@ locals {
   }
 }
 
-module "acs-info-cicd" {
+module "acs_info_cicd" {
   source = "github.com/byu-oit/terraform-aws-acs-info-cicd?ref=v1.0.0"
   name   = local.name
   tags   = local.tags
