@@ -1,36 +1,28 @@
-![Latest GitHub Release](https://img.shields.io/github/v/release/byu-oit/terraform-aws-<module_name>?sort=semver)
+![Latest GitHub Release](https://img.shields.io/github/v/release/byu-oit/terraform-aws-aws-info-cicd?sort=semver)
 
-# Terraform Module Template
-GitHub template to quickly create Terraform modules
-
-## To Use Template
-1. Click the "Use this template" button 
-2. Name your terraform module repo as `terraform-aws-<module_name>` (if creating non-AWS module change `aws` to the cloud provider)
-3. Rename this README's title to the title you named your repo in #2
-4. Update the shield badge URL to match the module's repo at the top of this README
-5. Update this README to match the module's title (in the usage section)
-6. Update `examples/simple/simple-example.tf` to match the module's title
-7. Update the `reviewers` section in the [dependabot.yml](.github/dependabot.yml) file.
-8. Remove [this section](#to-use-template) from the README
+# Terraform AWS Backend S3 CI/CD
+Creates the IAM policies needed to use [Terraform AWS ACS Info](https://github.com/byu-oit/terraform-aws-acs-info).
 
 #### [New to Terraform Modules at BYU?](https://devops.byu.edu/terraform/index.html)
 
 ## Usage
 ```hcl
-module "<module_name>" {
-  source = "github.com/byu-oit/terraform-aws-<module_name>?ref=v1.0.0"
+module "acs-info-cicd" {
+  source = "github.com/byu-oit/terraform-aws-acs-info-cicd?ref=v1.0.0"
+  name   = "my_project"
 }
 ```
 
 ## Requirements
-* Terraform version 0.12.0 or greater
+* Terraform version 1.0.0 or greater
 
 ## Inputs
 | Name | Type  | Description | Default |
 | --- | --- | --- | --- |
-| | | | |
+| name | string | Used to prefix created resource names | |
+| tags | map(string) | A map of AWS Tags to attach to each resource created | {} |
 
 ## Outputs
 | Name | Type | Description |
-| ---  | ---  | --- |
-| | | |
+| --- | --- | --- |
+| cicd_policy | [IAM Policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | Permissions needed to use [Terraform AWS ACS Info](https://github.com/byu-oit/terraform-aws-acs-info). |
