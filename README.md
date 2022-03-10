@@ -1,4 +1,4 @@
-![Latest GitHub Release](https://img.shields.io/github/v/release/byu-oit/terraform-aws-aws-info-cicd?sort=semver)
+![Latest GitHub Release](https://img.shields.io/github/v/release/byu-oit/terraform-aws-acs-info-cicd?sort=semver)
 
 # Terraform AWS Backend S3 CI/CD
 Creates the IAM policies needed to use [Terraform AWS ACS Info](https://github.com/byu-oit/terraform-aws-acs-info).
@@ -7,7 +7,7 @@ Creates the IAM policies needed to use [Terraform AWS ACS Info](https://github.c
 
 ## Usage
 ```hcl
-module "acs-info-cicd" {
+module "acs_info_cicd" {
   source = "github.com/byu-oit/terraform-aws-acs-info-cicd?ref=v1.0.0"
   name   = "my_project"
 }
