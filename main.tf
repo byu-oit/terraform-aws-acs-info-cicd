@@ -16,8 +16,8 @@ locals {
 data "template_file" "cicd_policy" {
   template = file("${path.module}/cicd-policy.json")
   vars = {
-    account_id = locals.account_id
-    region     = locals.region
+    account_id = local.account_id
+    region     = local.region
   }
 }
 
