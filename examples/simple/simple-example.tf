@@ -14,6 +14,8 @@ locals {
 
 module "acs-info-cicd" {
   source = "github.com/byu-oit/terraform-aws-acs-info-cicd?ref=v1.0.0"
+  name   = local.name
+  tags   = local.tags
 }
 
 module "gha_role" {

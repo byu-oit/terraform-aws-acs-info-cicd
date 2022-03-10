@@ -8,6 +8,7 @@ provider "aws" {
 
 module "ci_test" {
   source = "../../"
+  name   = "ci_test"
 }
 
 output "cicd_policy_arn" {

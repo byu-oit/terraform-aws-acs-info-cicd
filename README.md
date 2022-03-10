@@ -9,6 +9,7 @@ Creates the IAM policies needed to use [Terraform AWS ACS Info](https://github.c
 ```hcl
 module "acs-info-cicd" {
   source = "github.com/byu-oit/terraform-aws-acs-info-cicd?ref=v1.0.0"
+  name   = "my_project"
 }
 ```
 
@@ -18,6 +19,8 @@ module "acs-info-cicd" {
 ## Inputs
 | Name | Type  | Description | Default |
 | --- | --- | --- | --- |
+| name | string | Used to prefix created resource names | |
+| tags | map(string) | A map of AWS Tags to attach to each resource created | {} |
 
 ## Outputs
 | Name | Type | Description |
